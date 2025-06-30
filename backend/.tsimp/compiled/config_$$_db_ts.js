@@ -1,0 +1,16 @@
+import mongoose from 'mongoose';
+const connectDB = async () => {
+    try {
+        if (!process.env.MONGO_URI) {
+            throw new Error('MONGO_URI is not defined');
+        }
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log('MongoDB connected');
+    }
+    catch (error) {
+        console.error('MongoDB connection error:', error.message);
+        process.exit(1);
+    }
+};
+export default connectDB;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGIuanMiLCJzb3VyY2VSb290IjoiQzovVXNlcnMvYW5hbmQvRGVza3RvcC9jb3NtaWNfaW5zaWdodHMvYmFja2VuZC8iLCJzb3VyY2VzIjpbImNvbmZpZy9kYi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLFFBQVEsTUFBTSxVQUFVLENBQUM7QUFFaEMsTUFBTSxTQUFTLEdBQUcsS0FBSyxJQUFtQixFQUFFO0lBQzFDLElBQUksQ0FBQztRQUNILElBQUksQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLFNBQVMsRUFBRSxDQUFDO1lBQzNCLE1BQU0sSUFBSSxLQUFLLENBQUMsMEJBQTBCLENBQUMsQ0FBQztRQUM5QyxDQUFDO1FBQ0QsTUFBTSxRQUFRLENBQUMsT0FBTyxDQUFDLE9BQU8sQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLENBQUM7UUFDOUMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxtQkFBbUIsQ0FBQyxDQUFDO0lBQ25DLENBQUM7SUFBQyxPQUFPLEtBQUssRUFBRSxDQUFDO1FBQ2YsT0FBTyxDQUFDLEtBQUssQ0FBQywyQkFBMkIsRUFBRyxLQUFlLENBQUMsT0FBTyxDQUFDLENBQUM7UUFDckUsT0FBTyxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUNsQixDQUFDO0FBQ0gsQ0FBQyxDQUFDO0FBRUYsZUFBZSxTQUFTLENBQUMifQ==

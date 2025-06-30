@@ -1,0 +1,6 @@
+import { Router } from 'express';
+import { getExoplanets } from "../controllers/exoplanetController.js";
+const router = Router();
+router.get('/', getExoplanets);
+export default router;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXhvcGxhbmV0Um91dGVzLmpzIiwic291cmNlUm9vdCI6IkM6L1VzZXJzL2FuYW5kL0Rlc2t0b3AvY29zbWljX2luc2lnaHRzL2JhY2tlbmQvIiwic291cmNlcyI6WyJyb3V0ZXMvZXhvcGxhbmV0Um91dGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxNQUFNLEVBQUUsTUFBTSxTQUFTLENBQUM7QUFDakMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLHVDQUF1QyxDQUFDO0FBRXRFLE1BQU0sTUFBTSxHQUFHLE1BQU0sRUFBRSxDQUFDO0FBRXhCLE1BQU0sQ0FBQyxHQUFHLENBQUMsR0FBRyxFQUFFLGFBQWEsQ0FBQyxDQUFDO0FBRS9CLGVBQWUsTUFBTSxDQUFDIn0=

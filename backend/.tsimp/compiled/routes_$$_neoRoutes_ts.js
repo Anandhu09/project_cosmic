@@ -1,0 +1,6 @@
+import { Router } from 'express';
+import { getNeos } from "../controllers/neoController.js";
+const router = Router();
+router.get('/', getNeos);
+export default router;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmVvUm91dGVzLmpzIiwic291cmNlUm9vdCI6IkM6L1VzZXJzL2FuYW5kL0Rlc2t0b3AvY29zbWljX2luc2lnaHRzL2JhY2tlbmQvIiwic291cmNlcyI6WyJyb3V0ZXMvbmVvUm91dGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxNQUFNLEVBQUUsTUFBTSxTQUFTLENBQUM7QUFDakMsT0FBTyxFQUFFLE9BQU8sRUFBRSxNQUFNLGlDQUFpQyxDQUFDO0FBRTFELE1BQU0sTUFBTSxHQUFHLE1BQU0sRUFBRSxDQUFDO0FBRXhCLE1BQU0sQ0FBQyxHQUFHLENBQUMsR0FBRyxFQUFFLE9BQU8sQ0FBQyxDQUFDO0FBRXpCLGVBQWUsTUFBTSxDQUFDIn0=
