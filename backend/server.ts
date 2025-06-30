@@ -15,23 +15,25 @@ dotenv.config();
 
 const app: Express = express();
 
-// Allow CORS from all origins
-app.use(cors({
-  origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-  credentials: false, // Set to true if cookies/auth headers are needed
-}));
+app.use(
+  cors({
+    origin: [
+      'http://localhost:5173', 
+      'https://your-frontend-domain.com', 
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
-// Middleware
-app.use(helmet()); // Security headers
-app.use(morgan('combined')); // Request logging
+app.use(helmet()); 
+app.use(morgan('combined')); 
 app.use(
   rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit each IP to 100 requests per window
+    windowMs: 15 * 60 * 1000, 
+    max: 100, 
     message: { error: { message: 'Too many requests', status: 429 } },
   })
 );

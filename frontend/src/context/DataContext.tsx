@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import config from '../config';
 import { Exoplanet } from '../types/exoplanets';
 import { NEO } from '../types/neo';
 import { InsightsApiResponse } from '../types/insights';
@@ -55,24 +56,21 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       ...(filters.radiusMax && { radiusMax: filters.radiusMax }),
     }).toString();
 
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-    const response = await axios.get<ExoplanetApiResponse>(`${apiUrl}/api/exoplanets?${query}`, {
+    const response = await axios.get<ExoplanetApiResponse>(`${config.API_URL}/api/exoplanets?${query}`, {
       timeout: 10000,
     });
     return response.data;
   };
 
   const fetchNeos = async () => {
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-    const response = await axios.get<NEOApiResponse>(`${apiUrl}/api/neo`, {
+    const response = await axios.get<NEOApiResponse>(`${config.API_URL}/api/neo`, {
       timeout: 10000,
     });
     return response.data;
   };
 
   const fetchInsights = async () => {
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-    const response = await axios.get<InsightsApiResponse>(`${apiUrl}/api/insights`, {
+    const response = await axios.get<InsightsApiResponse>(`${config.API_URL}/api/insights`, {
       timeout: 10000,
     });
     return response.data;
