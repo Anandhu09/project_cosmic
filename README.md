@@ -95,9 +95,6 @@ npm install
 
 Create a .env file inside the backend/ folder with:
 
-```bash
-echo "NASA_API_KEY=your_nasa_api_key" > .env
-```
 Environmental variables 
 
 ```bash
@@ -121,16 +118,24 @@ npm start
 ```
 
 ## Frontend Setup
-
+```bash
 cd frontend  
 npm install  
 npm start
+```
 
-Create frontend .env file
-Create a .env file inside the frontend/ folder with:
+### Create frontend .env file    
 
+Create a .env file inside the frontend/ folder with:  
+- In Production mode use
+```bash
 VITE_API_URL=https://project-cosmic.onrender.com
+```
 
+- In Development mode use
+```bash
+VITE_API_URL=https://localhost:3000
+```
 ## Start the frontend app:
 
 ```bash
