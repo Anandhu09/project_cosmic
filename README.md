@@ -43,7 +43,8 @@ cosmic_insights/
 
 ## 🔧 Tech Stack
 
-**Frontend**  
+**Frontend**
+
 - React (with Hooks)
 - TypeScript
 - Axios (HTTP requests)
@@ -52,7 +53,8 @@ cosmic_insights/
 - TailwindCSS (styling)
 - Vite (build tool)
 
-**Backend**  
+**Backend**
+
 - Node.js
 - Express.js
 - TypeScript
@@ -77,12 +79,13 @@ cosmic_insights/
 
 ### Clone the repository
 
- ``` bash
-    git clone https://github.com/Anandhu09/project_cosmic.git
-    cd cosmic_insights
+```bash
+   git clone https://github.com/Anandhu09/project_cosmic.git
+   cd cosmic_insights
 ```
 
 ### Backend Setup
+
 ```bash
 cd backend
 npm install
@@ -93,16 +96,31 @@ npm install
 Create a .env file inside the backend/ folder with:
 
 ```bash
+echo "NASA_API_KEY=your_nasa_api_key" > .env
+```
+Environmental variables 
+
+```bash
 MONGO_URI=mongodb+srv://Anandhu:oJ2PB0B34JBSt4NE@anandhucluster.rkahsgv.mongodb.net/NASA?retryWrites=true&w=majority&appName=AnandhuCluster
 PORT=3000
 NASA_API_KEY=ht9JSuW7j0v8g9I908cTGRTcC8UnyHsYcxVdpeDW
 ```
 
-echo "NASA_API_KEY=your_nasa_api_key" > .env
+## Start the backend app:
 
+- In Development mode
+
+```bash
+npm run dev
+```
+
+- In Production mode
+
+```bash
 npm start
+```
 
-### Frontend Setup
+## Frontend Setup
 
 cd frontend  
 npm install  
@@ -113,6 +131,9 @@ Create a .env file inside the frontend/ folder with:
 
 VITE_API_URL=https://project-cosmic.onrender.com
 
-Start the frontend app:
+## Start the frontend app:
 
+```bash
 npm start
+```
+Use the link in the terminal to open the web app
