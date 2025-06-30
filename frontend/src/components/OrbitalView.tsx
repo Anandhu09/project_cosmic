@@ -5,16 +5,16 @@ import { useData } from '../context/DataContext';
 import { Mesh, Vector3 } from 'three';
 import * as THREE from 'three';
 
-// Procedural fallback texture
+
 const createFallbackTexture = () => {
   try {
     const size = 512;
     const data = new Uint8Array(size * size * 3);
     for (let i = 0; i < data.length; i += 3) {
       const noise = Math.random() * 255;
-      data[i] = noise; // R
-      data[i + 1] = noise * 0.8; // G
-      data[i + 2] = noise * 0.6; // B
+      data[i] = noise; 
+      data[i + 1] = noise * 0.8; 
+      data[i + 2] = noise * 0.6; 
     }
     const texture = new THREE.DataTexture(data, size, size, THREE.RGBFormat);
     texture.needsUpdate = true;
@@ -25,7 +25,7 @@ const createFallbackTexture = () => {
   }
 };
 
-// Simplified atmosphere shader
+
 const atmosphereVertexShader = `
   varying vec3 vNormal;
   void main() {
@@ -60,24 +60,24 @@ const OrbitalView: React.FC = () => {
     '#FBBF24', // Amber
   ];
 
-  // Fallback texture
+
   const fallbackTexture = createFallbackTexture();
   if (!fallbackTexture) {
     console.error('Fallback texture creation failed');
     return <div className="h-[40vh] bg-gray-800 text-white flex items-center justify-center">Texture creation failed</div>;
   }
 
-  // Log data for debugging
+
   useEffect(() => {
     console.log('Statistics:', JSON.stringify(statistics, null, 2));
     console.log('Exoplanets:', JSON.stringify(exoplanets, null, 2));
     console.log('Anomaly count:', statistics?.anomalies?.length ?? 0);
   }, [statistics, exoplanets]);
 
-  // Calculate number of anomalies safely
+
   const anomalyCount = statistics?.anomalies?.length ?? 0;
 
-  // Component for each planet
+
   const Planet: React.FC<{
     anomaly: { name: string; radius: number; deviation: string };
     index: number;
@@ -94,7 +94,7 @@ const OrbitalView: React.FC = () => {
     const yOffset = (index % 2 === 0 ? 1 : -1) * (index * 0.4);
     const tilt = (index % 3) * 0.15 - 0.15;
     const planetColor = barColors[index % barColors.length];
-    const hasRing = useMemo(() => Math.random() < 0.3, []); // Memoize to prevent re-evaluation
+    const hasRing = useMemo(() => Math.random() < 0.3, []); 
 
     useEffect(() => {
       console.log(
@@ -133,7 +133,7 @@ const OrbitalView: React.FC = () => {
           if (hasRing && ringRef.current) {
             ringRef.current.position.copy(meshRef.current.position);
             ringRef.current.rotation.y += 0.01;
-            ringRef.current.visible = true; // Ensure ring stays visible
+            ringRef.current.visible = true; 
           }
           if (htmlRef.current && meshRef.current) {
             const { x, y, z } = meshRef.current.position;

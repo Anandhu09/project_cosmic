@@ -1,4 +1,3 @@
-
 export interface Exoplanet {
   name: string;
   radius: number;

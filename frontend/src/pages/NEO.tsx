@@ -24,13 +24,13 @@ const NEO: React.FC = () => {
   const { neos, totalNeos, neoLoading, neoError, refetchNeos } = useData();
 
   useEffect(() => {
-    refetchNeos(); // Trigger fetch on mount
+    refetchNeos(); 
   }, [refetchNeos]);
 
   if (neoLoading) return <div className="p-4 text-gray-400">Loading...</div>;
   if (neoError) return <div className="p-4 text-red-500">{neoError}</div>;
 
-  // Scatter graph data
+  
   const scatterData = {
     datasets: [
       {
