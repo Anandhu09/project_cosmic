@@ -80,8 +80,8 @@ cosmic_insights/
 ### Clone the repository
 
 ```bash
-   git clone https://github.com/Anandhu09/project_cosmic.git
-   cd cosmic_insights
+git clone https://github.com/Anandhu09/project_cosmic.git
+cd cosmic_insights
 ```
 
 ### Backend Setup
@@ -142,3 +142,9 @@ VITE_API_URL=https://localhost:3000
 npm start
 ```
 Use the link in the terminal to open the web app
+
+## 👤 Author
+- Name     : Anandhu Vikraman
+- GitHub   : https://github.com/Anandhu09
+- Mobile   : +353 892492348
+- LinkedIn : https://www.linkedin.com/in/anandhu-v-96211a23b/
